@@ -17,7 +17,7 @@ function toggleSideMenu(){
 
 // Click to Show More Content Boxes
 let cta = document.querySelector(".cta");
-cta.addEventListener("click", toggleHiddenContent)
+cta.addEventListener("click", toggleHiddenContent);
 
 function toggleHiddenContent(){
   document.querySelector("#hidden-contents").classList.toggle("hidden");
