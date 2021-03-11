@@ -1,0 +1,15 @@
+extends layout 
+
+block CSS
+  include includes/myName.css
+
+block content 
+  if username
+    h1 Your name is #{username} !
+  else 
+    .panel
+      form(action="/trackName", method="get") 
+        label(for="name") Enter your user name !
+        input(name="name" id="name" type="text" required) 
+        input(type="submit")
+  a(href="/logout") logout

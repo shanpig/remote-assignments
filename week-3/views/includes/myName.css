@@ -1,0 +1,13 @@
+form {
+  width: 50%;
+  margin: 100px auto;
+  box-shadow: 2px 2px 3px 3px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form > * {
+  margin: 1em 2em;
+}
