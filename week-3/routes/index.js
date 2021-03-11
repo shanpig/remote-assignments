@@ -29,12 +29,18 @@ function getDataHandler(req){
     if (isValid){
       let string = [];
       for (let i=1; i<=number; i++){ string.push(i);}
-
-      let sum = string.reduce((sum, i) => sum+i );
+      let sum;
+      try{
+        sum = string.reduce((acc, i) => acc+i);
+      }
+      catch(err){
+        console.log("oh no")
+      }
+      
       
       result = `${string.join(" + ")} = ${sum}`
     }
-    else{ result = "Wrong parameter !";}
+    else{ result = "Please enter a positive integer !";}
   }
   return result;
 }
