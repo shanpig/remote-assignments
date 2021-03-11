@@ -24,7 +24,7 @@ function getDataHandler(req){
   if (!hasNumber){ result = "Lack of Parameter";}
   else {
     let number = +req.query.number;
-    let isValid = number & number > 0;
+    let isValid = number && number > 0;
 
     if (isValid){
       let string = [];
