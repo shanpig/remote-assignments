@@ -141,6 +141,7 @@ main > .container > .content-box {
     height: auto;
     width: auto;
     max-width: none;
+    min-width: 50%;
     background-color: transparent;
     transform: initial;
   }
