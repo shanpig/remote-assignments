@@ -4,11 +4,11 @@
   font-family: serif;
 }
 
-.clearfix::after {
+/* .clearfix::after {
   content: "";
   display: table;
   clear: both;
-}
+} */
 
 /* header */
 .main-header {
@@ -27,7 +27,7 @@
 
 .menu {
   list-style-type: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: -40%;
   margin: 0;
@@ -135,12 +135,14 @@ main > .container > .content-box {
   }
   .menu {
     display: inline-block;
+    position: absolute;
     margin: 0 1em;
     right: 0;
     height: auto;
     width: auto;
     max-width: none;
     background-color: transparent;
+    transform: initial;
   }
   .menu li {
     display: inline-block;

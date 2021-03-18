@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assignment2.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="placeholder"></div>
+  <script>
+    const url = "https://cwpeng.github.io/live-records-samples/data/products.json";
+
+    function ajax(src, callback){
+      const xhr = new XMLHttpRequest();
+      xhr.open("get", src, true);
+
+      xhr.onload = ()=>callback(JSON.parse(xhr.responseText));
+
+      xhr.send();
+    }
+
+    function render(data){
+      let placeholder = document.querySelector(".placeholder");
+
+      data.forEach(product_info=>{
+        let product = document.createElement("div");
+        product.classList.add("product");
+       
+        let name = document.createElement("h2");
+        let price = document.createElement("h3");
+        let desc = document.createElement("p");
+       
+        let nameTxt = document.createTextNode(product_info.name);
+        let priceTxt = document.createTextNode("$ "+product_info.price);
+        let descTxt = document.createTextNode(product_info.description);
+       
+        name.appendChild(nameTxt);
+        price.appendChild(priceTxt);
+        desc.appendChild(descTxt);
+        
+        product.appendChild(name);
+        product.appendChild(price);
+        product.appendChild(desc);
+
+        placeholder.appendChild(product);
+      })
+      
+    }
+
+    ajax(url, render)
+  </script>
+</body>
+</html>
